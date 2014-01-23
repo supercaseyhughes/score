@@ -18,12 +18,20 @@ class PlayerController < ApplicationController
 	end
 	
 	def update										
-		player = Player.find(params[:player][:id])
-		#new_score = params[:player][:score] + player.score
-		player.update_attributes(player_params)
+		player = Player.find(params[:id])
+		score = player_params[:score].to_i + player.score
+		player.update_attributes(score: score)
 		@players = Player.all
      		render "index"
+
 	end
+	def destroy
+  		player = Player.find(params[:id])
+  		player.destroy
+ 
+  		@players = Player.all
+  		render "index"
+end
 	private
 	def player_params
 		params.require(:player).permit(:name, :score)
