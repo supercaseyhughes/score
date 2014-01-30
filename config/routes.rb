@@ -1,11 +1,11 @@
 Score::Application.routes.draw do
-  resources :player
+  resources :players
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'player#index'
+  root 'players#top_3'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
