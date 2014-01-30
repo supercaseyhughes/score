@@ -1,0 +1,10 @@
+<h1>Add a new player</h1>
+<%#= @player.inspect %>
+
+<%= form_for @player, url: {action: "create"} do |f| %>
+  <%= f.label :name %>:
+  <%= f.text_field :name %><br />
+
+
+  <%= f.submit %>
+<% end %>
